@@ -8,7 +8,7 @@ const ChatRoom = ({ chats, setChats, socket, socketLoading }) => {
   const message = useInput("");
   useEffect(() => {
     if (!socketLoading) {
-      socket.on("/newChat", (chat) => {
+      socket.on("newChat", (chat) => {
         console.log("이게 chat이다", chat);
         setChats((prev) => [...prev, chat]);
       });
