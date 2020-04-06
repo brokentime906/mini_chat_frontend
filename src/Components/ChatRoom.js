@@ -18,7 +18,9 @@ const ChatRoom = ({ chats, setChats, socket, socketLoading }) => {
     e.preventDefault();
     console.log("axios onSubmit 고고");
     message.setValue("");
-    await axios.post("/chat", { chat: message.value });
+    await axios.post("https://mini-chat-mongo.herokuapp.com//chat", {
+      chat: message.value,
+    });
   };
   return (
     <ChatRoomBlock>
