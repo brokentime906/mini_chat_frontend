@@ -11,14 +11,10 @@ function App() {
   useEffect(() => {
     setSocketLoading(true);
     const fetchData = async () => {
-      const { data: _chats } = await axios.get(
-        "https://mini-chat-mongo.herokuapp.com/"
-      );
+      const { data: _chats } = await axios.get("https://minichat.netlify.com/");
       console.log("chats", _chats);
       setChats(_chats);
-      const _socket = socketio.connect(
-        "https://mini-chat-mongo.herokuapp.com/"
-      );
+      const _socket = socketio.connect("https://minichat.netlify.com");
       setSocket(_socket);
       setSocketLoading(false);
     };
