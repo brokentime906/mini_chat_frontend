@@ -9,7 +9,7 @@ const ChatRoom = ({ chats, setChats, socket, socketLoading }) => {
   const message = useInput("");
   useEffect(() => {
     if (!socketLoading) {
-      socket.on("https://mini-chat-mongo.herokuapp.com/newChat", (chat) => {
+      socket.on("newChat", (chat) => {
         console.log("이게 chat이다", chat);
         setChats((prev) => [...prev, chat]);
       });
